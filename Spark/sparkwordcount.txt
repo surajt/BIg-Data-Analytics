@@ -1,0 +1,13 @@
+ val input = sc.textFile("Z:\\BDA\\homework5\\obamaspeech\\1.txt")
+ input.count()
+ input.first()
+ val lineWithSpark = input.filter(line=>line.contains("america"))
+ input.filter(line=>line.contains("america")).count()
+ input.filter(line=>line.contains("obama")).count()
+  input.filter(line=>line.contains("the")).count()
+  input.filter(line=>line.contains("Obama")).count()
+   val wordCounts = input.flatMap(line=>line.split(" ")).map(word=>(word,1)).reduceByKey((a,b)=>a+b)
+   
+    wordCounts.collect()
+    wordCounts.count()
+ 
